@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>New Taylor clip just leaked</title>
+
+  <!-- Open Graph / iMessage preview -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="New Taylor clip just dropped">
+  <meta property="og:description" content="This was wild — watch it, like, now.">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/0/0f/The_Life_of_a_Showgirl_-_Taylor_Swift_album_artwork.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:url" content="https://example.com/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="New Taylor clip just dropped">
+  <meta name="twitter:description" content="This was wild — watch it, like, now.">
+  <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/en/0/0f/The_Life_of_a_Showgirl_-_Taylor_Swift_album_artwork.png">
+
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; text-align:center; padding:40px; background:#f8f8f8; }
+    .card { background: white; max-width:720px; margin:0 auto; padding:20px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+    img { max-width:100%; border-radius:8px; cursor:pointer; }
+    button { margin-top:14px; padding:12px 18px; font-size:16px; border-radius:8px; border: none; cursor:pointer; }
+    #player { margin-top:16px; display:none; }
+    .banner { display:none; margin-top:12px; font-weight:700; color:#b30000; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>OMG — you have to see this!</h1>
+    <p>Click the picture or the button to watch.</p>
+
+    <!-- Taylor image -->
+    <img id="taylor" src="https://upload.wikimedia.org/wikipedia/en/0/0f/The_Life_of_a_Showgirl_-_Taylor_Swift_album_artwork.png" alt="Taylor Swift — click to watch" />
+
+    <div>
+      <button id="watchBtn">Play clip</button>
+    </div>
+
+    <div id="player">
+      <iframe id="yt" width="100%" height="360" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=1"
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <div class="banner" id="banner">GOTCHA — classic Rickroll! 🎵</div>
+  </div>
+
+  <script>
+    const taylor = document.getElementById('taylor');
+    const watchBtn = document.getElementById('watchBtn');
+    const player = document.getElementById('player');
+    const banner = document.getElementById('banner');
+
+    function reveal() {
+      player.style.display = 'block';
+      banner.style.display = 'block';
+      setTimeout(()=> player.scrollIntoView({behavior:'smooth'}), 150);
+    }
+
+    taylor.addEventListener('click', reveal);
+    watchBtn.addEventListener('click', reveal);
+  </script>
+</body>
+</html>
